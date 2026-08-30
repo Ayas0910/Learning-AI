@@ -13,19 +13,27 @@ prompt = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "you are a {language} trainer. keep answer under the {limit} words"
-
+            "you are a {language} trainer. keep answers under {limit} words"
         ),
         (
             "human",
-            "Explain {topic} as a beginner"
+            "Explain {topic} to a begineer."
         )
     ]
 )
 
-prompt.invoke({
-    "language" : "python",
-        "limit" : 90,
-        "topic" : "variables"
-}
+filled = prompt.invoke(
+    {
+        "language": "python",
+        "limit": 50,
+        "topic": "decorators"
+    }
 )
+
+print(filled.messages)
+print()
+
+
+response = model.invoke(filled)
+
+print(response.content)
