@@ -17,3 +17,5 @@ model = ChatHuggingFace(llm = endpoint)
 response = model.invoke("what is your model name in two lines")
 
 print(response.content)
+
+# I need to study the next class
