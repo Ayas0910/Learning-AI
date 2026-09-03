@@ -52,3 +52,5 @@ result = client.images.generate(
 
 save(result,"telusko.png")
 
+
+
